@@ -1,0 +1,9 @@
+
+// Login
+
+"tg.login.alert.title" = "Enter your email";
+"tg.login.alert.message" = "You will recieve a reset password letter on this mail";
+
+// Other
+"tg.cancel" = "Cancel";
+"tg.send" = "Send";

@@ -1,0 +1,10 @@
+
+// Login
+
+"tg.login.alert.title" = "Вкажіть свою пошту";
+"tg.login.alert.message" = "Ви отримаєте лист з відновленням паролю на цю пошту";
+
+
+// Other
+"tg.cancel" = "Скасувати";
+"tg.send" = "Надіслати";
