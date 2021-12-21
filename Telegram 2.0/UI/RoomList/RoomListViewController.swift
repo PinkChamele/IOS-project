@@ -10,6 +10,7 @@ class RoomListViewController: BaseController {
         super.viewDidLoad()
 
         tableView.dataSource = dataSource
+        tableView.delegate = self
         tableView.register(RoomCell.className)
     }
 
@@ -19,4 +20,10 @@ class RoomListViewController: BaseController {
         navigationController?.navigationBar.isHidden = true
     }
 
+}
+
+extension RoomListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        pushController(RoomViewController())
+    }
 }

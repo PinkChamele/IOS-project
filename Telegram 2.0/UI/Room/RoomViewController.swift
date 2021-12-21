@@ -1,22 +1,37 @@
 import UIKit
+import GrowingTextView
 
 class RoomViewController: BaseController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var messageField: GrowingTextView!
+    
+    let dataSource = RoomMessageListDataSource()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.dataSource = dataSource
+        tableView.register(
+            RoomMessageCell.className,
+            OwnRoomMessageCell.className
+        )
+
+        messageField.delegate = self
+        messageField.default()
+
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func sendMessageAction(_ sender: UIButton) {
+        sender.rotate360Degrees()
     }
-    */
+    
+}
 
+extension RoomViewController: GrowingTextViewDelegate {
+    func textViewDidChangeHeight(_ textView: GrowingTextView, height: CGFloat) {
+       UIView.animate(withDuration: 0.2) {
+           self.view.layoutIfNeeded()
+       }
+    }
 }

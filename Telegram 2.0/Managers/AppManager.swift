@@ -23,6 +23,7 @@ struct AppManager {
     
     private static func prepare() {
         IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.disabledToolbarClasses = [RoomViewController.self]
         AppInfo.shared.load()
         if #available(iOS 15.0, *) {
             UITableView.appearance().sectionHeaderTopPadding = 0

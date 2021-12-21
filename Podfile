@@ -10,6 +10,7 @@ target 'Telegram 2.0' do
   pod 'KeychainSwift'
   pod 'SkyFloatingLabelTextField'
   pod 'Localize'
+  pod 'GrowingTextView'
   # Pods for Telegram 2.0
 
 
