@@ -117,6 +117,19 @@
                                         <constraint firstAttribute="width" constant="240" id="k14-Qq-7Ic"/>
                                     </constraints>
                                 </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcV-0I-KRi">
+                                    <rect key="frame" x="15" y="15" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="KSf-ud-amI"/>
+                                        <constraint firstAttribute="height" constant="44" id="dEi-lG-TUf"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system"/>
+                                    <connections>
+                                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="6d6-Gs-F1Z"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <viewLayoutGuide key="safeArea" id="ocT-lM-ATR"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -125,6 +138,8 @@
                                 <constraint firstItem="Ahh-f7-PTj" firstAttribute="centerX" secondItem="QgO-t8-Mh7" secondAttribute="centerX" id="5gp-Vl-r1a"/>
                                 <constraint firstItem="TJW-Eh-d4e" firstAttribute="top" secondItem="Rxn-ZU-2zW" secondAttribute="bottom" constant="60" id="6Uu-RV-EBb"/>
                                 <constraint firstItem="ocT-lM-ATR" firstAttribute="trailing" secondItem="Zu4-JO-cnx" secondAttribute="trailing" constant="20" id="A5d-q8-kiD"/>
+                                <constraint firstItem="VcV-0I-KRi" firstAttribute="leading" secondItem="ocT-lM-ATR" secondAttribute="leading" constant="15" id="FNw-LY-K8F"/>
+                                <constraint firstItem="VcV-0I-KRi" firstAttribute="top" secondItem="ocT-lM-ATR" secondAttribute="top" constant="15" id="JmL-K3-lE2"/>
                                 <constraint firstItem="ocT-lM-ATR" firstAttribute="bottom" secondItem="Ahh-f7-PTj" secondAttribute="bottom" constant="30" id="NIM-Pg-nrr"/>
                                 <constraint firstItem="TJW-Eh-d4e" firstAttribute="centerY" secondItem="ocT-lM-ATR" secondAttribute="centerY" id="Q8j-MO-Jf2"/>
                                 <constraint firstItem="Zu4-JO-cnx" firstAttribute="leading" secondItem="ocT-lM-ATR" secondAttribute="leading" constant="20" id="eOz-rL-Wh6"/>
@@ -168,6 +183,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="sign-up-header" width="2267" height="2002"/>
         <namedColor name="main">
             <color red="0.0039215686274509803" green="0.28235294117647058" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

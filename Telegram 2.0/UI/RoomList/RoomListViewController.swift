@@ -5,6 +5,8 @@ class RoomListViewController: BaseController {
     @IBOutlet weak var tableView: UITableView!
     
     let dataSource = RoomListDataSource()
+    
+    let authorizationService = AuthorizationApiService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,18 @@ class RoomListViewController: BaseController {
         navigationController?.navigationBar.isHidden = true
     }
 
+    @IBAction func addRoomAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func logoutAction(_ sender: Any) {
+        authorizationService.logout { [weak self] _ in
+            self?.navVC?.setRootVC(LoginViewController())
+        } error: { [weak self]  error in
+            self?.showAlert(text: error.localizedDescription, isSuccess: false)
+        }
+
+    }
 }
 
 extension RoomListViewController: UITableViewDelegate {

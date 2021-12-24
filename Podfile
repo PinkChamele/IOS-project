@@ -11,6 +11,8 @@ target 'Telegram 2.0' do
   pod 'SkyFloatingLabelTextField'
   pod 'Localize'
   pod 'GrowingTextView'
+  pod 'Moya'
+  
   # Pods for Telegram 2.0
 
 

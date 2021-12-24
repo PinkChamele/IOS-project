@@ -28,42 +28,63 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="138.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nN5-PG-CBd">
-                            <rect key="frame" x="15" y="59" width="339" height="64.5"/>
+                            <rect key="frame" x="15" y="59" width="294" height="64.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqb-LF-xZS">
-                                    <rect key="frame" x="0.0" y="0.0" width="339" height="38.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="294" height="38.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3x7-6g-yOO">
-                                    <rect key="frame" x="0.0" y="46.5" width="339" height="18"/>
+                                    <rect key="frame" x="0.0" y="46.5" width="294" height="18"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIZ-Qm-z1K">
-                            <rect key="frame" x="359" y="64" width="40" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="6uc-WV-1Jp"/>
-                                <constraint firstAttribute="width" constant="40" id="LKG-az-M9P"/>
-                            </constraints>
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" image="brain.head.profile" catalog="system" title=""/>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vGg-Jt-iGE">
+                            <rect key="frame" x="314" y="59" width="85" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUv-Nd-bSz">
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="4a6-DC-iqc"/>
+                                        <constraint firstAttribute="height" constant="40" id="xgm-md-Kof"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="brain.head.profile" catalog="system" title=""/>
+                                    <connections>
+                                        <action selector="addRoomAction:" destination="-1" eventType="touchUpInside" id="ujk-Dt-aSe"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIZ-Qm-z1K">
+                                    <rect key="frame" x="45" y="0.0" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="6uc-WV-1Jp"/>
+                                        <constraint firstAttribute="width" constant="40" id="LKG-az-M9P"/>
+                                    </constraints>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="arrow.right" catalog="system" title=""/>
+                                    <connections>
+                                        <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="n1M-9z-ncB"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="v9y-FX-Tob"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="nN5-PG-CBd" firstAttribute="top" secondItem="v9y-FX-Tob" secondAttribute="top" constant="15" id="190-0v-0hy"/>
                         <constraint firstAttribute="bottom" secondItem="nN5-PG-CBd" secondAttribute="bottom" constant="15" id="84y-Re-z1Q"/>
-                        <constraint firstItem="v9y-FX-Tob" firstAttribute="trailing" secondItem="lIZ-Qm-z1K" secondAttribute="trailing" constant="15" id="MGE-5O-WxI"/>
-                        <constraint firstItem="lIZ-Qm-z1K" firstAttribute="leading" secondItem="nN5-PG-CBd" secondAttribute="trailing" constant="5" id="bbC-29-da3"/>
-                        <constraint firstItem="lIZ-Qm-z1K" firstAttribute="top" secondItem="v9y-FX-Tob" secondAttribute="top" constant="20" id="obL-q1-ItG"/>
+                        <constraint firstItem="vGg-Jt-iGE" firstAttribute="top" secondItem="v9y-FX-Tob" secondAttribute="top" constant="15" id="Yo8-BW-ABk"/>
+                        <constraint firstItem="v9y-FX-Tob" firstAttribute="trailing" secondItem="vGg-Jt-iGE" secondAttribute="trailing" constant="15" id="mIM-M8-Mtq"/>
                         <constraint firstItem="nN5-PG-CBd" firstAttribute="leading" secondItem="KFi-Rl-bB5" secondAttribute="leading" constant="15" id="xNU-IZ-len"/>
+                        <constraint firstItem="vGg-Jt-iGE" firstAttribute="leading" secondItem="nN5-PG-CBd" secondAttribute="trailing" constant="5" id="yLh-uH-eu0"/>
                     </constraints>
                 </view>
             </subviews>
@@ -82,6 +103,7 @@
         </view>
     </objects>
     <resources>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
         <image name="brain.head.profile" catalog="system" width="114" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

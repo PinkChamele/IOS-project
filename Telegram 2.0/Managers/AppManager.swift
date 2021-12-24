@@ -3,6 +3,8 @@ import UIKit
 import IQKeyboardManagerSwift
 
 struct AppManager {
+    
+    static var rootNC: BaseNavigationController?
         
     static func configureRootVC(in window: UIWindow?) {
         prepare()
@@ -17,6 +19,7 @@ struct AppManager {
         }
         
         let nc = BaseNavigationController(rootViewController: rootVC)
+        AppManager.rootNC = nc
         window?.rootViewController = nc
         window?.makeKeyAndVisible()
     }
