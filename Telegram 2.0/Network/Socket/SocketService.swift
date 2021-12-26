@@ -3,21 +3,30 @@ import SocketIO
 class SocketService {
     let manager: SocketManager
     let socket: SocketIOClient
+    
+    var connectionCreated: ()->() = {}
+    var connectionClosed: ()->() = {}
+
+    var connected = false {
+        didSet {
+            if connected {
+                connectionCreated()
+            } else {
+                connectionClosed()
+            }
+        }
+    }
 
     init() {
         manager = SocketManager(socketURL: URL(string: Constants.baseURL)!, config: [.log(true), .compress])
         socket = manager.defaultSocket
-        socket.on("connect") { (data, ack) -> Void in
-            print("socket connected")
-        }
     }
     
     func connect() {
+        socket.on("connect") { (data, ack) -> Void in
+            print("socket connected")
+        }
         socket.connect()
-    }
-    
-    func disconect() {
-        socket.disconnect()
     }
     
     func handleMessage(handler: @escaping ((Message) -> Void)) {

@@ -111,6 +111,9 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system" title=""/>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="rzz-Dx-PxR"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IA0-aU-MQf">
                             <rect key="frame" x="362" y="14.5" width="40" height="40"/>

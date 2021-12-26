@@ -8,16 +8,16 @@ class RoomViewController: BaseController {
     @IBOutlet weak var messageField: GrowingTextView!
     @IBOutlet weak var messageControllsContainer: UIStackView!
     
-    let dataSource = RoomMessageListDataSource()
     let socketService = SocketService()
     let authorizationService = AuthorizationApiService()
+    
+    let dataSource = RoomMessageListDataSource()
+    
     let room: Room
-    var me: User?
 
     init(room: Room) {
         self.room = room
         super.init(nibName: nil, bundle: nil)
-        
     }
     
     required init?(coder: NSCoder) {
@@ -35,9 +35,16 @@ class RoomViewController: BaseController {
 
         messageField.delegate = self
         messageField.default()
-        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: UITextView.textDidChangeNotification, object: self)
-        addHandlers()
-        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(textDidChange),
+            name: UITextView.textDidChangeNotification,
+            object: self
+        )
+        socketService.connectionCreated = {
+            self.addHandlers()
+        }
+        socketService.connect()
     }
     
     func addHandlers() {
@@ -47,7 +54,6 @@ class RoomViewController: BaseController {
         socketService.handleAllMessages(roomId: room.id) { data in
             self.gotAllMessages(messages: data)
         }
-        socketService.connect()
     }
     
     func gotMessage(message: Message) {
@@ -73,8 +79,16 @@ class RoomViewController: BaseController {
     }
     
     @IBAction func sendMessageAction(_ sender: UIButton) {
-        socketService.sendMessage(message: .init(text: messageField.text, author: me?.email ?? "", roomId: room.id))
+        socketService.sendMessage(message: .init(
+            text: messageField.text,
+            author: AppInfo.shared.user?.email ?? "",
+            roomId: room.id
+        ))
         sender.rotate360Degrees()
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        popController()
     }
 }
 
