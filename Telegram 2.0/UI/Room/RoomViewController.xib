@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RoomViewController" customModule="Telegram_2_0" customModuleProvider="target">
             <connections>
+                <outlet property="messageControllsContainer" destination="bKf-XJ-GI3" id="0Sh-XS-zOV"/>
                 <outlet property="messageField" destination="Hrm-Hp-foX" id="jtA-ea-mSH"/>
+                <outlet property="sendButton" destination="IJB-9r-Mn7" id="Mb1-UU-rfd"/>
                 <outlet property="tableView" destination="3IO-Af-hft" id="h3E-Ig-zge"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,7 +30,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKf-XJ-GI3">
                             <rect key="frame" x="20" y="7" width="394" height="50"/>
                             <subviews>
-                                <textView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="329" placeholderIntrinsicHeight="21" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Lorem ipsum dolor sit er elit lamedoconsci" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hrm-Hp-foX" customClass="GrowingTextView" customModule="GrowingTextView">
+                                <textView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="329" placeholderIntrinsicHeight="21" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hrm-Hp-foX" customClass="GrowingTextView" customModule="GrowingTextView">
                                     <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <color key="textColor" systemColor="labelColor"/>
@@ -59,7 +61,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <action selector="sendMessageAction:" destination="-1" eventType="touchUpInside" id="w0Y-hZ-ahq"/>
+                                                <action selector="sendMessageAction:" destination="-1" eventType="touchUpInside" id="IQ2-qK-LlB"/>
                                             </connections>
                                         </button>
                                     </subviews>

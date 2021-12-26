@@ -6,6 +6,7 @@ enum AuthorizationApi {
     case logout
     case resetPassword(email: String)
     case confirmResetPassword(data: ConfirmResetPasswordRequest)
+    case me
 }
 
 extension AuthorizationApi: TargetType {
@@ -24,6 +25,8 @@ extension AuthorizationApi: TargetType {
             return "/v1/auth/send-reset-email"
         case .confirmResetPassword:
             return "/v1/auth/confirm-password-reset"
+        case .me:
+            return "v1/auth/self"
         }
     }
     
@@ -31,6 +34,8 @@ extension AuthorizationApi: TargetType {
         switch self {
         case .login, .logout, .register, .resetPassword, .confirmResetPassword:
             return .post
+        case .me:
+            return .get
         }
     }
     
@@ -48,6 +53,8 @@ extension AuthorizationApi: TargetType {
         case .register(data: let data):
             return .requestJSONEncodable(data)
         case .logout:
+            return .requestPlain
+        case .me:
             return .requestPlain
         case .resetPassword(email: let email):
             return .requestParameters(parameters: ["email":email], encoding: JSONEncoding.default)

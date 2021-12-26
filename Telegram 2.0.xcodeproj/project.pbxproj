@@ -31,9 +31,9 @@
 		6971084927750F6C004537A4 /* RoomsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6971084827750F6C004537A4 /* RoomsApi.swift */; };
 		6971084B277510BF004537A4 /* RoomsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6971084A277510BF004537A4 /* RoomsRequest.swift */; };
 		6971084F27751365004537A4 /* CreateRoomRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6971084E27751365004537A4 /* CreateRoomRequest.swift */; };
-		6971085227751A54004537A4 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6971085127751A54004537A4 /* UserResponse.swift */; };
+		6971085227751A54004537A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6971085127751A54004537A4 /* User.swift */; };
 		6971085427751D44004537A4 /* JoinRoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6971085327751D44004537A4 /* JoinRoomResponse.swift */; };
-		6971085627751ED7004537A4 /* RoomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6971085527751ED7004537A4 /* RoomResponse.swift */; };
+		6971085627751ED7004537A4 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6971085527751ED7004537A4 /* Room.swift */; };
 		6974DB8A2770F73D007243E3 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6974DB892770F73D007243E3 /* AppManager.swift */; };
 		6974DB8D2770F996007243E3 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6974DB8C2770F996007243E3 /* AppInfo.swift */; };
 		6974DB9027711DF2007243E3 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6974DB8F27711DF2007243E3 /* BaseController.swift */; };
@@ -51,6 +51,12 @@
 		698F7CF8273D93A5002DDFDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F7CF7273D93A5002DDFDB /* SceneDelegate.swift */; };
 		698F7CFF273D93A6002DDFDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698F7CFE273D93A6002DDFDB /* Assets.xcassets */; };
 		698F7D02273D93A6002DDFDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 698F7D00273D93A6002DDFDB /* LaunchScreen.storyboard */; };
+		69B447E227776CD300CAD51C /* RoomsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B447E127776CD300CAD51C /* RoomsApiService.swift */; };
+		69B447E42777845700CAD51C /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B447E32777845700CAD51C /* SocketService.swift */; };
+		69B447E72777897600CAD51C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B447E62777897600CAD51C /* Message.swift */; };
+		69B447E92777A37400CAD51C /* GetAllMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B447E82777A37400CAD51C /* GetAllMessages.swift */; };
+		69B447EB2777B92C00CAD51C /* SendMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B447EA2777B92C00CAD51C /* SendMessage.swift */; };
+		69B447EF2778505700CAD51C /* MessageValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B447EE2778505700CAD51C /* MessageValidator.swift */; };
 		69C93D5A277252230004F6CF /* RoomMessageListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C93D59277252230004F6CF /* RoomMessageListDataSource.swift */; };
 		69C93D65277254280004F6CF /* RoomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C93D63277254280004F6CF /* RoomMessageCell.swift */; };
 		69C93D66277254280004F6CF /* RoomMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C93D64277254280004F6CF /* RoomMessageCell.xib */; };
@@ -96,9 +102,9 @@
 		6971084827750F6C004537A4 /* RoomsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsApi.swift; sourceTree = "<group>"; };
 		6971084A277510BF004537A4 /* RoomsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRequest.swift; sourceTree = "<group>"; };
 		6971084E27751365004537A4 /* CreateRoomRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomRequest.swift; sourceTree = "<group>"; };
-		6971085127751A54004537A4 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		6971085127751A54004537A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6971085327751D44004537A4 /* JoinRoomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRoomResponse.swift; sourceTree = "<group>"; };
-		6971085527751ED7004537A4 /* RoomResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomResponse.swift; sourceTree = "<group>"; };
+		6971085527751ED7004537A4 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		6974DB892770F73D007243E3 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		6974DB8C2770F996007243E3 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		6974DB8F27711DF2007243E3 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -119,6 +125,12 @@
 		698F7CFE273D93A6002DDFDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		698F7D01273D93A6002DDFDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		698F7D03273D93A6002DDFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69B447E127776CD300CAD51C /* RoomsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsApiService.swift; sourceTree = "<group>"; };
+		69B447E32777845700CAD51C /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
+		69B447E62777897600CAD51C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		69B447E82777A37400CAD51C /* GetAllMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllMessages.swift; sourceTree = "<group>"; };
+		69B447EA2777B92C00CAD51C /* SendMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessage.swift; sourceTree = "<group>"; };
+		69B447EE2778505700CAD51C /* MessageValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageValidator.swift; sourceTree = "<group>"; };
 		69C93D59277252230004F6CF /* RoomMessageListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomMessageListDataSource.swift; sourceTree = "<group>"; };
 		69C93D63277254280004F6CF /* RoomMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomMessageCell.swift; sourceTree = "<group>"; };
 		69C93D64277254280004F6CF /* RoomMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomMessageCell.xib; sourceTree = "<group>"; };
@@ -167,6 +179,7 @@
 				690FD7E22775436D0031F846 /* PasswordValidator.swift */,
 				690FD7E32775436D0031F846 /* UserNameValidator.swift */,
 				690FD7E02775436D0031F846 /* VaildatorFactory.swift */,
+				69B447EE2778505700CAD51C /* MessageValidator.swift */,
 				690FD7E12775436D0031F846 /* ValidationError.swift */,
 			);
 			path = Validation;
@@ -202,6 +215,7 @@
 		6971084227750A5B004537A4 /* Socket */ = {
 			isa = PBXGroup;
 			children = (
+				69B447E32777845700CAD51C /* SocketService.swift */,
 			);
 			path = Socket;
 			sourceTree = "<group>";
@@ -210,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				6971084827750F6C004537A4 /* RoomsApi.swift */,
+				69B447E127776CD300CAD51C /* RoomsApiService.swift */,
 			);
 			path = Rooms;
 			sourceTree = "<group>";
@@ -282,6 +297,7 @@
 		6974DB9B27712700007243E3 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				69B447E52777895800CAD51C /* Socket */,
 				6974DB9E27712754007243E3 /* App */,
 				6974DB9C2771273B007243E3 /* Request */,
 				6974DB9D27712744007243E3 /* Response */,
@@ -301,9 +317,9 @@
 		6974DB9D27712744007243E3 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				6971085127751A54004537A4 /* UserResponse.swift */,
+				6971085127751A54004537A4 /* User.swift */,
 				6971085327751D44004537A4 /* JoinRoomResponse.swift */,
-				6971085527751ED7004537A4 /* RoomResponse.swift */,
+				6971085527751ED7004537A4 /* Room.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -394,6 +410,16 @@
 				698F7D03273D93A6002DDFDB /* Info.plist */,
 			);
 			path = "Telegram 2.0";
+			sourceTree = "<group>";
+		};
+		69B447E52777895800CAD51C /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				69B447E62777897600CAD51C /* Message.swift */,
+				69B447E82777A37400CAD51C /* GetAllMessages.swift */,
+				69B447EA2777B92C00CAD51C /* SendMessage.swift */,
+			);
+			path = Socket;
 			sourceTree = "<group>";
 		};
 		69C93D5F2772529D0004F6CF /* Messages */ = {
@@ -619,10 +645,12 @@
 				6974DBAA27713027007243E3 /* RoomCell.swift in Sources */,
 				69C93D65277254280004F6CF /* RoomMessageCell.swift in Sources */,
 				6974DB8A2770F73D007243E3 /* AppManager.swift in Sources */,
+				69B447E42777845700CAD51C /* SocketService.swift in Sources */,
 				6974DBB427723E42007243E3 /* ResetPasswordViewController.swift in Sources */,
 				6974DB9027711DF2007243E3 /* BaseController.swift in Sources */,
 				6971083927750503004537A4 /* AuthorizationApi.swift in Sources */,
 				690FD7E82775436D0031F846 /* UserNameValidator.swift in Sources */,
+				69B447E92777A37400CAD51C /* GetAllMessages.swift in Sources */,
 				69CAA819273D9C37007C3D23 /* LoginViewController.swift in Sources */,
 				69C93D5A277252230004F6CF /* RoomMessageListDataSource.swift in Sources */,
 				69C93D692772545B0004F6CF /* OwnRoomMessageCell.swift in Sources */,
@@ -634,7 +662,7 @@
 				690FD7EC277543E20031F846 /* UITextField+Extension.swift in Sources */,
 				690FD7E42775436D0031F846 /* EmailValidator.swift in Sources */,
 				6974DBAD27713661007243E3 /* RoomListDataSource.swift in Sources */,
-				6971085227751A54004537A4 /* UserResponse.swift in Sources */,
+				6971085227751A54004537A4 /* User.swift in Sources */,
 				6971084927750F6C004537A4 /* RoomsApi.swift in Sources */,
 				69CAA80D273D9BD5007C3D23 /* RoomListViewController.swift in Sources */,
 				690FD7E62775436D0031F846 /* ValidationError.swift in Sources */,
@@ -643,22 +671,26 @@
 				6974DB8D2770F996007243E3 /* AppInfo.swift in Sources */,
 				690FD7DD27753E620031F846 /* UIViewController+Extension.swift in Sources */,
 				690823912772679B000B3943 /* GrowingTextView+Extension.swift in Sources */,
+				69B447EB2777B92C00CAD51C /* SendMessage.swift in Sources */,
 				6971083D27750823004537A4 /* AuthorizationApiService.swift in Sources */,
 				6971084427750BC5004537A4 /* AuthorizationRequest.swift in Sources */,
 				6971084B277510BF004537A4 /* RoomsRequest.swift in Sources */,
 				6974DBA727712C92007243E3 /* BaseNavigationController.swift in Sources */,
-				6971085627751ED7004537A4 /* RoomResponse.swift in Sources */,
+				6971085627751ED7004537A4 /* Room.swift in Sources */,
 				690FD7D4277533C30031F846 /* URL+Extension.swift in Sources */,
 				6974DBA327712816007243E3 /* UITableView+Extension.swift in Sources */,
 				690FD7D827753BFC0031F846 /* ToastView.swift in Sources */,
 				6971083F27750963004537A4 /* BaseApiService.swift in Sources */,
 				698F7CF8273D93A5002DDFDB /* SceneDelegate.swift in Sources */,
 				690FD7EE27754A0F0031F846 /* UIColor+Extension.swift in Sources */,
+				69B447EF2778505700CAD51C /* MessageValidator.swift in Sources */,
 				690FD7E72775436D0031F846 /* PasswordValidator.swift in Sources */,
 				6971085427751D44004537A4 /* JoinRoomResponse.swift in Sources */,
 				69CAA811273D9BFC007C3D23 /* RoomViewController.swift in Sources */,
 				6971084627750BF0004537A4 /* ConfirmResetPasswordRequest.swift in Sources */,
+				69B447E72777897600CAD51C /* Message.swift in Sources */,
 				690FD7EA277543950031F846 /* String+Extension.swift in Sources */,
+				69B447E227776CD300CAD51C /* RoomsApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

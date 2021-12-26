@@ -4,12 +4,13 @@ import Alamofire
 class AuthorizationApiService: BaseApiService<AuthorizationApi> {
     
     func login(data: AuthorizationRequest,
-               success successCallback: ((Data?) -> Void)? = nil,
+               success successCallback: ((User?) -> Void)? = nil,
                error errorCallback: ((Error) -> Void)? = nil) {
         api.request(.login(data: data)) { result in
             switch result {
             case .success(let response):
-                let responseData = try? response.map(Data.self)
+                let responseData = try? response.map(User.self)
+                AppInfo.shared.user = responseData
                 successCallback?(responseData)
             case .failure(let error):
                 errorCallback?(error)
@@ -24,6 +25,21 @@ class AuthorizationApiService: BaseApiService<AuthorizationApi> {
             switch result {
             case .success(let response):
                 let responseData = try? response.map(Data.self)
+                AppInfo.shared.clear()
+                successCallback?(responseData)
+            case .failure(let error):
+                errorCallback?(error)
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func me(success successCallback: ((User?) -> Void)? = nil,
+                error errorCallback: ((Error) -> Void)? = nil) {
+        api.request(.me) { result in
+            switch result {
+            case .success(let response):
+                let responseData = try? response.map(User.self)
                 successCallback?(responseData)
             case .failure(let error):
                 errorCallback?(error)

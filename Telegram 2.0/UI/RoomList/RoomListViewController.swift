@@ -5,7 +5,8 @@ class RoomListViewController: BaseController {
     @IBOutlet weak var tableView: UITableView!
     
     let dataSource = RoomListDataSource()
-    
+    let roomsService = RoomsApiService()
+
     let authorizationService = AuthorizationApiService()
 
     override func viewDidLoad() {
@@ -14,6 +15,7 @@ class RoomListViewController: BaseController {
         tableView.dataSource = dataSource
         tableView.delegate = self
         tableView.register(RoomCell.className)
+        loadRooms()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,12 +34,25 @@ class RoomListViewController: BaseController {
         } error: { [weak self]  error in
             self?.showAlert(text: error.localizedDescription, isSuccess: false)
         }
-
+    }
+    
+    func loadRooms() {
+        roomsService.userRooms { [weak self] rooms in
+            self?.updateRoomList(rooms: rooms ?? [])
+        } error: { [weak self] error in
+            self?.showAlert(error: error)
+        }
+    }
+    
+    func updateRoomList(rooms: [Room]) {
+        dataSource.rooms = rooms
+        tableView.reloadData()
     }
 }
 
 extension RoomListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        pushController(RoomViewController())
+        let room = dataSource.rooms[indexPath.row]
+        pushController(RoomViewController(room: room))
     }
 }

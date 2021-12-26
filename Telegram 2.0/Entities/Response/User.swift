@@ -1,4 +1,4 @@
-struct UserResponse: Codable {
+struct User: Codable {
     let id: String
     let email: String
     

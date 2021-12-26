@@ -48,7 +48,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="JnI-B7-X9G">
-                        <rect key="frame" x="60" y="14.5" width="250" height="41.5"/>
+                        <rect key="frame" x="60" y="24.5" width="250" height="21.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANH-lp-5cI">
                                 <rect key="frame" x="0.0" y="0.0" width="250" height="21.5"/>
@@ -56,8 +56,8 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZJ-p9-Pz9">
-                                <rect key="frame" x="0.0" y="25.5" width="250" height="16"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZJ-p9-Pz9">
+                                <rect key="frame" x="0.0" y="21.5" width="250" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -82,7 +82,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="roomAvatarLabel" destination="rQt-xS-xf5" id="hKB-97-AXu"/>
                 <outlet property="shadowView" destination="Mph-ge-7J8" id="Cbl-eR-Krc"/>
+                <outlet property="titleLabel" destination="ANH-lp-5cI" id="cIW-JX-l2o"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="92.745535714285708"/>
         </tableViewCell>

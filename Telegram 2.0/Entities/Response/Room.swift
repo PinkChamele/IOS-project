@@ -1,6 +1,6 @@
-struct RoomResponse: Codable {
+struct Room: Codable {
     let id: String
-    let users: [UserResponse]
+    let users: [User]
     let name: String
 
     enum CodingKeys: String, CodingKey {

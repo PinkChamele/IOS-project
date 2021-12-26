@@ -3,6 +3,6 @@ import UIKit
 
 struct Constants {
     
-    static let baseURL = "https://1088-91-226-56-36.ngrok.io"
+    static let baseURL = "https://7e4d-91-202-135-216.ngrok.io"
   
 }

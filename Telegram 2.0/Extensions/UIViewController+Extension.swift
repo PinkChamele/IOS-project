@@ -2,6 +2,10 @@ import UIKit
 
 extension UIViewController {
     
+    func showAlert(error: Error) {
+        showAlert(text: error.localizedDescription, isSuccess: false)
+    }
+    
     func showAlert(text: String? = "", isSuccess: Bool = true) {
         
         guard let window = UIApplication.shared.keyWindow else { return }

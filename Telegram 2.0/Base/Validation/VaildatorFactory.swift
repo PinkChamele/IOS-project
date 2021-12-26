@@ -6,6 +6,7 @@ enum ValidatorType {
     case email
     case password(confirmPassword: String? = nil)
     case username
+    case message
 }
 
 enum VaildatorFactory {
@@ -17,6 +18,8 @@ enum VaildatorFactory {
             return PasswordValidator(confirmPassword: confirmPassword)
         case .username:
             return UserNameValidator()
+        case .message:
+            return MessageValidator()
         }
     }
 }

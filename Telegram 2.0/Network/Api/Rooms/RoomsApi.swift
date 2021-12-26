@@ -3,7 +3,7 @@ import Moya
 enum RoomsApi {
     case rooms
     case userRooms
-    case joinRoom(data: JoinRoomRequest)
+    case joinRoom(data: JoinRoomReques)
     case createRoom(data: CreateRoomRequest)
     case roomById(id: String)
 }

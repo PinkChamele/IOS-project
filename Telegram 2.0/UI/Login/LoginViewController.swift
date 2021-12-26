@@ -15,6 +15,7 @@ class LoginViewController: BaseController {
         passwordField.addTarget(self, action: #selector(didChangeText), for: .editingChanged)
         emailField.default()
         passwordField.default()
+        passwordField.isSecureTextEntry = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +39,7 @@ class LoginViewController: BaseController {
         do {
             let email = try emailField.validatedText(of: .email)
             let password = try passwordField.validatedText(of: .password())
-            authorizationService.login(data: .init(email: email, password: password)) { [weak self] _ in
+            authorizationService.login(data: .init(email: email, password: password)) { [weak self] data in
                 self?.navVC?.setRootVC(RoomListViewController())
             } error: { [weak self]  error in
                 self?.showAlert(text: error.localizedDescription, isSuccess: false)

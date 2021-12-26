@@ -8,6 +8,11 @@ class AppInfo: Codable {
     private static let keychain = KeychainSwift()
     
     var sessionToken: String?
+    var user: User? {
+        didSet {
+            save()
+        }
+    }
     
     // MARK: - Methods
     func save() {
@@ -21,6 +26,7 @@ class AppInfo: Codable {
             do {
                 let info = try JSONDecoder().decode(AppInfo.self, from: data)
                 sessionToken = info.sessionToken
+                user = info.user
             } catch {}
         }
     }
@@ -28,6 +34,7 @@ class AppInfo: Codable {
     
     func clear() {
         sessionToken = nil
+        user = nil
         save()
     }
     
