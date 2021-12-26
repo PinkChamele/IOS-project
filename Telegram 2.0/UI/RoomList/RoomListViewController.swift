@@ -23,10 +23,6 @@ class RoomListViewController: BaseController {
         
         navigationController?.navigationBar.isHidden = true
     }
-
-    @IBAction func addRoomAction(_ sender: Any) {
-        
-    }
     
     @IBAction func logoutAction(_ sender: Any) {
         authorizationService.logout { [weak self] _ in
@@ -34,6 +30,70 @@ class RoomListViewController: BaseController {
         } error: { [weak self]  error in
             self?.showAlert(text: error.localizedDescription, isSuccess: false)
         }
+    }
+    
+    @IBAction func createRoomAction(_ sender: Any) {
+        showCreateRoomAlert()
+    }
+    
+    @IBAction func joinRoomAction(_ sender: Any) {
+        showJoinRoomAlert()
+    }
+    
+    func showCreateRoomAlert() {
+        let alert = UIAlertController(
+            title: "New room".localized,
+            message: "Enter room name".localized,
+            preferredStyle: .alert
+        )
+        
+        alert.addTextField { textField in
+            textField.text = ""
+            textField.keyboardType = .emailAddress
+            textField.tag = 2
+            textField.autocapitalizationType = .none
+        }
+        
+        alert.addAction(UIAlertAction(title: "tg.cancel".localized, style: .cancel))
+        alert.addAction(UIAlertAction(title: "Create".localized, style: .default, handler: { [weak alert] (_) in
+            let name = alert?.textFields![0].text ?? ""
+            self.roomsService.createRoom(name: name) { [self] rooms in
+                updateRoomList(rooms: rooms ?? [])
+            } error: { [self] error in
+                showAlert(error: error)
+            }
+
+        }))
+        
+       present(alert, animated: true, completion: nil)
+    }
+    
+    func showJoinRoomAlert() {
+        let alert = UIAlertController(
+            title: "Add room".localized,
+            message: "Enter room id".localized,
+            preferredStyle: .alert
+        )
+        
+        alert.addTextField { textField in
+            textField.text = ""
+            textField.keyboardType = .emailAddress
+            textField.tag = 2
+            textField.autocapitalizationType = .none
+        }
+        
+        alert.addAction(UIAlertAction(title: "tg.cancel".localized, style: .cancel))
+        alert.addAction(UIAlertAction(title: "Add".localized, style: .default, handler: { [weak alert] (_) in
+            let id = alert?.textFields![0].text ?? ""
+            self.roomsService.joinRoom(id: id) { [self] rooms in
+                updateRoomList(rooms: rooms ?? [])
+            } error: { [self] error in
+                showAlert(error: error)
+            }
+
+        }))
+        
+       present(alert, animated: true, completion: nil)
     }
     
     func loadRooms() {

@@ -32,21 +32,11 @@ extension UIView {
         self.layer.add(rotateAnimation, forKey: nil)
     }
     
-    func hideAnimated(in stackView: UIStackView) {
-        if !self.isHidden {
-            UIView.animate(
-                withDuration: 0.25,
-                delay: 0,
-                usingSpringWithDamping: 0.9,
-                initialSpringVelocity: 1,
-                options: [],
-                animations: {
-                    self.isHidden = true
-                    stackView.layoutIfNeeded()
-            },
-                completion: nil
-            )
-        }
+    func hideAnimated(in stackView: UIStackView, isHidden: Bool) {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.isHidden = isHidden
+            stackView.layoutSubviews()
+        })
     }
 }
 

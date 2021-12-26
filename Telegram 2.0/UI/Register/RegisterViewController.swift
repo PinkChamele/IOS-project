@@ -30,19 +30,23 @@ class RegisterViewController: BaseController {
         }
     }
     
-    @IBAction func signUpAction(_ sender: Any) {
+    @IBAction func signUpAction(_ sender: DefaultButton) {
         do {
             let email = try emailField.validatedText(of: .email)
             let password = try passwordField.validatedText(of: .password())
             let requestData = AuthorizationRequest(email: email, password: password)
+            sender.setLoading()
             authorizationService.register(data: requestData) { [weak self] _ in
                 self?.authorizationService.login(data: requestData) { _ in
                     self?.navVC?.setRootVC(RoomListViewController())
+                    sender.setLoading(false)
                 } error: { [weak self]  error in
                     self?.showAlert(text: error.localizedDescription, isSuccess: false)
+                    sender.setLoading(false)
                 }
             } error: { [weak self]  error in
                 self?.showAlert(text: error.localizedDescription, isSuccess: false)
+                sender.setLoading(false)
             }
         } catch let error {
             let message = (error as! ValidationError).message

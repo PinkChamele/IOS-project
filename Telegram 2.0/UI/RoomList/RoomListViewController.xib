@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,46 +21,49 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mUc-R5-R61">
-                    <rect key="frame" x="0.0" y="151.5" width="414" height="744.5"/>
+                    <rect key="frame" x="0.0" y="150.5" width="414" height="745.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFi-Rl-bB5">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="151.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nN5-PG-CBd">
-                            <rect key="frame" x="15" y="59" width="294" height="77.5"/>
+                            <rect key="frame" x="15" y="59" width="279" height="76.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqb-LF-xZS">
-                                    <rect key="frame" x="0.0" y="0.0" width="294" height="38.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="279" height="38.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaN-XO-JYG">
-                                    <rect key="frame" x="0.0" y="46.5" width="294" height="31"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dVh-Ne-W4t">
+                                    <rect key="frame" x="0.0" y="46.5" width="279" height="30"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaN-XO-JYG">
+                                            <rect key="frame" x="0.0" y="0.0" width="129.5" height="30"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Create"/>
+                                            <connections>
+                                                <action selector="createRoomAction:" destination="-1" eventType="touchUpInside" id="xg6-H2-bN4"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmY-V1-t8n">
+                                            <rect key="frame" x="149.5" y="0.0" width="129.5" height="30"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="Join"/>
+                                            <connections>
+                                                <action selector="joinRoomAction:" destination="-1" eventType="touchUpInside" id="J65-A8-nna"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vGg-Jt-iGE">
-                            <rect key="frame" x="314" y="59" width="85" height="40"/>
+                            <rect key="frame" x="359" y="59" width="40" height="40"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUv-Nd-bSz">
-                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="40" id="4a6-DC-iqc"/>
-                                        <constraint firstAttribute="height" constant="40" id="xgm-md-Kof"/>
-                                    </constraints>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="brain.head.profile" catalog="system" title=""/>
-                                    <connections>
-                                        <action selector="addRoomAction:" destination="-1" eventType="touchUpInside" id="ujk-Dt-aSe"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIZ-Qm-z1K">
-                                    <rect key="frame" x="45" y="0.0" width="40" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="6uc-WV-1Jp"/>
                                         <constraint firstAttribute="width" constant="40" id="LKG-az-M9P"/>
@@ -83,7 +86,7 @@
                         <constraint firstItem="vGg-Jt-iGE" firstAttribute="top" secondItem="v9y-FX-Tob" secondAttribute="top" constant="15" id="Yo8-BW-ABk"/>
                         <constraint firstItem="v9y-FX-Tob" firstAttribute="trailing" secondItem="vGg-Jt-iGE" secondAttribute="trailing" constant="15" id="mIM-M8-Mtq"/>
                         <constraint firstItem="nN5-PG-CBd" firstAttribute="leading" secondItem="KFi-Rl-bB5" secondAttribute="leading" constant="15" id="xNU-IZ-len"/>
-                        <constraint firstItem="vGg-Jt-iGE" firstAttribute="leading" secondItem="nN5-PG-CBd" secondAttribute="trailing" constant="5" id="yLh-uH-eu0"/>
+                        <constraint firstItem="vGg-Jt-iGE" firstAttribute="leading" secondItem="nN5-PG-CBd" secondAttribute="trailing" constant="65" id="yLh-uH-eu0"/>
                     </constraints>
                 </view>
             </subviews>
@@ -103,7 +106,6 @@
     </objects>
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
-        <image name="brain.head.profile" catalog="system" width="114" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

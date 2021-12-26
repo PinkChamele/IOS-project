@@ -12,6 +12,7 @@ target 'Telegram 2.0' do
   pod 'Localize'
   pod 'GrowingTextView'
   pod 'Moya'
+  pod 'SnapKit'
   
   # Pods for Telegram 2.0
 

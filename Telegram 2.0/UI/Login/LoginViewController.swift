@@ -35,19 +35,22 @@ class LoginViewController: BaseController {
         showEmailResetPasswordAlert()
     }
     
-    @IBAction func signInAction(_ sender: Any) {
-        do {
-            let email = try emailField.validatedText(of: .email)
-            let password = try passwordField.validatedText(of: .password())
-            authorizationService.login(data: .init(email: email, password: password)) { [weak self] data in
-                self?.navVC?.setRootVC(RoomListViewController())
-            } error: { [weak self]  error in
-                self?.showAlert(text: error.localizedDescription, isSuccess: false)
-            }
-        } catch let error {
-            let message = (error as! ValidationError).message
-            showAlert(text: message, isSuccess: false)
-        }
+    @IBAction func signInAction(_ sender: DefaultButton) {
+       do {
+           let email = try emailField.validatedText(of: .email)
+           let password = try passwordField.validatedText(of: .password())
+           sender.setLoading()
+           authorizationService.login(data: .init(email: email, password: password)) { [weak self] data in
+               self?.navVC?.setRootVC(RoomListViewController())
+               sender.setLoading(false)
+           } error: { [weak self]  error in
+               self?.showAlert(text: error.localizedDescription, isSuccess: false)
+               sender.setLoading(false)
+           }
+       } catch let error {
+           let message = (error as! ValidationError).message
+           showAlert(text: message, isSuccess: false)
+       }
     }
 
     @IBAction func signUpAction(_ sender: Any) {

@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 extension UIViewController {
     
@@ -15,12 +16,11 @@ extension UIViewController {
         alertView.tag = 4191
         window.addSubview(alertView)
         
-        alertView.frame.size = .init(width: 200, height: 150)
-        
-        let xPos = window.center.x - (alertView.frame.width / 2)
-        let yPos = window.center.y - (alertView.frame.height / 2)
-
-        alertView.frame.origin = .init(x: xPos, y: yPos)
+        alertView.snp.makeConstraints { make in
+            make.center.equalTo(window.center)
+            make.width.equalTo(200)
+            make.height.lessThanOrEqualTo(500)
+        }
         
         alertView.alpha = 0
         window.layoutIfNeeded()

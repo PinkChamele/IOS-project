@@ -24,9 +24,18 @@ class ResetPasswordViewController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        newPasswordField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        confirmPasswordField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 
+    @objc func textDidChange(_ sender: SkyFloatingLabelTextField) {
+        if sender == newPasswordField {
+            sender.updateValidationResult(with: .password())
+        } else if sender == confirmPasswordField {
+            let pass = newPasswordField.text
+            sender.updateValidationResult(with: .password(confirmPassword: pass))
+        }
+    }
 
     @IBAction func closeAction(_ sender: Any) {
         self.dismiss(animated: true)
@@ -38,6 +47,7 @@ class ResetPasswordViewController: BaseController {
             try confirmPasswordField.validatedText(of: .password(confirmPassword: pass))
             authorizationService.confirmResetPassword(data: .init(token: token, password: pass)) { _ in
                 self.showAlert(text: "Your password has been successfully changed")
+                self.dismiss(animated: true)
             } error: { error in
                 self.showAlert(text: error.localizedDescription, isSuccess: false)
             }

@@ -7,6 +7,7 @@ class RoomViewController: BaseController {
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageField: GrowingTextView!
     @IBOutlet weak var messageControllsContainer: UIStackView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     let socketService = SocketService()
     let authorizationService = AuthorizationApiService()
@@ -32,19 +33,15 @@ class RoomViewController: BaseController {
             RoomMessageCell.className,
             OwnRoomMessageCell.className
         )
-
+        titleLabel.text = room.name
+        
         messageField.delegate = self
         messageField.default()
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(textDidChange),
-            name: UITextView.textDidChangeNotification,
-            object: self
-        )
         socketService.connectionCreated = {
             self.addHandlers()
         }
         socketService.connect()
+        updateSendButtonVisability()
     }
     
     func addHandlers() {
@@ -65,17 +62,20 @@ class RoomViewController: BaseController {
     func gotAllMessages(messages: [Message]) {
         dataSource.messages = messages
         tableView.reloadData()
-        tableView.scrollToBottom(isAnimated: false)
+        if messages.count > 0 {
+            tableView.scrollToBottom(isAnimated: false)
+        }
     }
     
-    @objc func textDidChange(_ sender: UITextView) {
+    func updateSendButtonVisability() {
         do {
-            try sender.text.validated(of: .message)
-            sendButton.superview?.isHidden = false
+            try messageField.text.validated(of: .message)
+            sendButton.superview?.hideAnimated(in: messageControllsContainer, isHidden: false)
+            sendButton.isHidden = false
         } catch {
-            sendButton.superview?.isHidden = true
+            sendButton.superview?.hideAnimated(in: messageControllsContainer, isHidden: true)
+            sendButton.isHidden = true
         }
-        sendButton.hideAnimated(in: messageControllsContainer)
     }
     
     @IBAction func sendMessageAction(_ sender: UIButton) {
@@ -84,6 +84,7 @@ class RoomViewController: BaseController {
             author: AppInfo.shared.user?.email ?? "",
             roomId: room.id
         ))
+        messageField.text = ""
         sender.rotate360Degrees()
     }
     
@@ -97,5 +98,9 @@ extension RoomViewController: GrowingTextViewDelegate {
        UIView.animate(withDuration: 0.2) {
            self.view.layoutIfNeeded()
        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        updateSendButtonVisability()
     }
 }
