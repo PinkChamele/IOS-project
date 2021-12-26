@@ -24,7 +24,7 @@ class SocketService {
     
     func connect() {
         socket.on("connect") { (data, ack) -> Void in
-            print("socket connected")
+            self.connected = true
         }
         socket.connect()
     }
